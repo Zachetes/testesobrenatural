@@ -1,0 +1,93 @@
+@import url('https://fonts.cdnfonts.com/css/ds-digital?styles=17999');
+@import url('https://fonts.cdnfonts.com/css/nintendo-ds-bios');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: black;
+  }
+  .typing-container {
+    position: relative;
+  }
+  
+  .typing-text {
+    user-select: none;
+    font-family: 'VT323', monospace;
+    font-size: 30px;
+    color: #fff;
+  text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px #0fa,
+    0 0 82px #0fa,
+    0 0 92px #0fa,
+    0 0 102px #0fa,
+    0 0 151px #0fa;
+    animation: flicker 6s infinite alternate;  
+  }
+  
+  .typing-cursor {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 2px;
+    height: 25px;
+    color: #fff;
+    text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px #0fa,
+    0 0 82px #0fa,
+    0 0 92px #0fa,
+    0 0 102px #0fa,
+    0 0 151px #0fa;
+    animation: flicker 4.5s infinite alternate; 
+  }
+  
+  .typing-cursor::after {
+    content: "|"; /* Usando o símbolo de barra vertical como cursor */
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    color: transparent; /* Tornando o símbolo invisível (sem cor) */
+    animation: blink 0.7s infinite;
+  }
+  
+  
+  @keyframes blink {
+    0%, 100% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes flicker {
+    
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+  
+        text-shadow:
+        0 0 4px #fff,
+        0 0 11px #fff,
+        0 0 19px #fff,
+        0 0 40px #0fa,
+        0 0 80px #0fa,
+        0 0 90px #0fa,
+        0 0 100px #0fa,
+        0 0 150px #0fa;
+    
+    }
+    
+    20%, 24%, 55% {        
+        text-shadow: none;
+    }    
+  }
+  
